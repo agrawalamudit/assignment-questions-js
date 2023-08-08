@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      #timer-message {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="timer-message"></div>
+
+    <script>
+
+// You are given an HTML file and the corresponding CSS file. The HTML file has a div with id timer- message.
+// Your task is to write JavaScript to create a timed message display.
+// Immediately after the page loads, the message 'Initial message' should be displayed. After 2 seconds, the message should change to 'After 2 seconds'.
+// After another 3 seconds (5 seconds from initial load), the message should change to 'After 5 seconds'.
+// You must use the setTimeout function to achieve this.
+
+
+      document.getElementById("timer-message").innerText = "Initial message";
+
+      setTimeout(() =>
+      {
+        document.getElementById("timer-message").innerText = "After 2 seconds";
+      },2000);
+
+      setTimeout(() =>
+      {
+        document.getElementById("timer-message").innerText = "After 5 seconds";
+      },5000);
+
+      
+    </script>
+  </body>
+</html>

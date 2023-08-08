@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce It</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      #strings {
+        width: 250px;
+        height: 30px;
+        margin-right: 10px;
+        padding: 5px;
+      }
+
+      #analyzeBtn {
+        padding: 5px 10px;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="stringForm" onsubmit="return false">
+      <input
+        type="text"
+        id="strings"
+        placeholder="Enter comma-separated strings..."
+      />
+      <button type="submit" id="analyzeBtn">Analyze</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        // javascript code goes here
+//         Reduce IT
+
+// You are given a simple HTML page with a form and a submit button. The form takes a list of comma-separated strings from the user.
+
+
+// The user can enter a list of comma-separated strings in the input field with id #strings.
+
+// When the user presses the "Analyze" button with id #analyzeBtn, your task is to create a JavaScript function using the Reduce method to return the longest string from the input and display it in the paragraph tag with id #result.
+
+// If the input is "hello, mate, guardian, university" then the output is "The longest string is: university"
+
+// Do not change the HTML or CSS. Write the JavaScript code to handle this functionality.
+
+
+      let para=document.getElementById("result");
+
+      let btn = document.getElementById("analyzeBtn");
+      btn.onclick = () =>
+      {
+        let x = document.getElementById("strings").value;
+        let temp=x.split(",");
+
+        //brute-force logic
+        
+        // let ptr=0;
+        // for(let i=0;i<temp.length;i++)
+        // {
+        //   if(temp[ptr].length < temp[i].length)
+        //   {
+        //     ptr=i;
+        //   }
+        // }
+        // para.innerText="The longest string is:" + temp[ptr];
+
+        ans=temp.reduce((prev,curr) => {
+          return prev.length < curr.length ? curr : prev;
+        },temp[0]);
+
+        para.innerText="The longest string is: " + ans;
+      }
+
+    </script>
+  </body>
+</html>
