@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS BOX IN BOX</title>
+  </head>
+  <style>
+    *
+    {
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    #outer-box
+    {
+      border: 5px solid black;
+      padding: 20px;
+      width: 46%;
+      position: relative;
+      height: 100vh;
+    }
+    #inner-box1,#inner-box2
+    {
+      height: 300px;
+      width: 300px;
+      background-color: lightgreen;
+      color: red;
+      border:3px solid red;
+      text-align: center;
+      padding-top: 150px;
+      position: absolute;
+    }
+    #inner-box1
+    {
+      left: 300px;
+    }
+    #inner-box2
+    {
+      top: 300px;
+    }
+
+  </style>
+  <body>
+    <div id="outer-box">
+      <div id="inner-box1">Hello, World 1!</div>
+      <div id="inner-box2">Hello, World 2!</div>
+    </div>
+  </body>
+</html>
